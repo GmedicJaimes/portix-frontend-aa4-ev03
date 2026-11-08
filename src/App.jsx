@@ -4,6 +4,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login";
 import Inicio from "./pages/Inicio";
 import Empleados from "./pages/Empleados";
+import Disponibilidad from "./pages/Disponibilidad";
 import EnConstruccion from "./pages/EnConstruccion";
 import MainLayout from "./layout/MainLayout";
 import RutaProtegida from "./components/RutaProtegida";
@@ -25,6 +26,7 @@ function App() {
       >
         <Route path="/dashboard" element={<Inicio />} />
         <Route path="/empleados" element={<Empleados />} />
+        <Route path="/disponibilidad" element={<Disponibilidad />} />
         <Route
           path="/horas"
           element={<EnConstruccion titulo="Registro de horas" />}
@@ -32,10 +34,6 @@ function App() {
         <Route
           path="/nomina"
           element={<EnConstruccion titulo="Gestión de nómina" />}
-        />
-        <Route
-          path="/disponibilidad"
-          element={<EnConstruccion titulo="Disponibilidad de personal" />}
         />
         <Route
           path="/reportes"
