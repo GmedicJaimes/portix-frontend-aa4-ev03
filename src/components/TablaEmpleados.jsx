@@ -1,8 +1,12 @@
 // Componente reutilizable que muestra una tabla de empleados.
 // Props:
 //   - empleados: arreglo de objetos con los datos a mostrar.
+//   - onEditar: función que se ejecuta al presionar "Editar" (recibe el empleado).
+//   - onEliminar: función que se ejecuta al presionar "Eliminar" (recibe el empleado).
 
-function TablaEmpleados({ empleados }) {
+import Boton from "./Boton";
+
+function TablaEmpleados({ empleados, onEditar, onEliminar }) {
   // Renderizado condicional: mensaje si no hay resultados
   if (empleados.length === 0) {
     return <p className="mensaje-vacio">No se encontraron empleados.</p>;
@@ -21,6 +25,7 @@ function TablaEmpleados({ empleados }) {
             <th>Teléfono</th>
             <th>Fecha de ingreso</th>
             <th>Estado</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -40,6 +45,22 @@ function TablaEmpleados({ empleados }) {
                 >
                   {empleado.estado}
                 </span>
+              </td>
+              <td>
+                <div className="acciones-tabla">
+                  <Boton
+                    texto="Editar"
+                    tipo="secundario"
+                    pequeno
+                    onClick={() => onEditar(empleado)}
+                  />
+                  <Boton
+                    texto="Eliminar"
+                    tipo="peligro"
+                    pequeno
+                    onClick={() => onEliminar(empleado)}
+                  />
+                </div>
               </td>
             </tr>
           ))}

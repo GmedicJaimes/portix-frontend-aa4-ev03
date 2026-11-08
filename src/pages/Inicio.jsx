@@ -1,9 +1,13 @@
 // Pantalla de inicio del dashboard: bienvenida y resumen de empleados.
+// Las cifras se calculan con los datos compartidos del contexto,
+// por lo que se actualizan al registrar, editar o eliminar empleados.
 
-import empleados from "../data/empleados";
+import { useEmpleados } from "../context/EmpleadosContext";
 
 function Inicio() {
-  // Cálculo de las cifras del resumen a partir de los datos
+  const { empleados } = useEmpleados();
+
+  // Cálculo de las cifras del resumen
   const total = empleados.length;
   const activos = empleados.filter((e) => e.estado === "Activo").length;
   const inactivos = total - activos;
