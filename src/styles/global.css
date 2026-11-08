@@ -1,0 +1,38 @@
+/* Estilos globales y variables de color (paleta institucional de Portix) */
+
+:root {
+  --color-primary: #0d3f6e;
+  --color-primary-dark: #092c4d;
+  --color-bg-light: #eeeeee;
+  --color-white: #ffffff;
+  --color-text: #333333;
+  --color-text-light: #6b7280;
+  --color-error: #d92d20;
+  --color-border: #d1d5db;
+  --font-main: "Segoe UI", Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--color-text);
+  background-color: var(--color-bg-light);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
